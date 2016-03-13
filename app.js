@@ -7,4 +7,5 @@ app.on('ready', function () {
     height: 600
   })
   mainWindow.loadURL('file://' + __dirname + '/main.html')
+  mainWindow.openDevTools()
 })
