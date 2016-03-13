@@ -1,6 +1,10 @@
-document.write('The current version of io.js' + process.version)
+var app = require('app')
+var BrowserWindow = require('browser-window')
 
-var fs = require('fs')
-
-var contents = fs.readFileSync('./package.json', 'utf8')
-alert(contents)
+app.on('ready', function () {
+  var mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600
+  })
+  mainWindow.loadURL('file://' + __dirname + '/main.html')
+})
